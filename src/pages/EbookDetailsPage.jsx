@@ -23,7 +23,7 @@ function EbookDetailsPage() {
       {foundEbook.id && (
         <div key={foundEbook.id} className="card-details">
           <BackButton />
-          <h3>{foundEbook.title}</h3>
+          <h2>{foundEbook.title}</h2>
 
           {!foundEbook.authors.length ? (
             <p></p>
@@ -38,7 +38,7 @@ function EbookDetailsPage() {
             <p></p>
           ) : (
             <p>
-              Traducteur : {foundEbook.translators[0].name} (
+              Traduction : {foundEbook.translators[0].name} (
               {foundEbook.translators[0].birth_year}-
               {foundEbook.translators[0].death_year})
             </p>
@@ -46,7 +46,7 @@ function EbookDetailsPage() {
 
           <img src={foundEbook.formats["image/jpeg"]} alt={foundEbook.title} />
 
-          <h4 className="ebook-formats">Ebook (formats) :</h4>
+          <h3 className="ebook-formats">Ebook (formats) :</h3>
           <ul className="formats-list">
             <li>
               <a

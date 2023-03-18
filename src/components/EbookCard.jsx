@@ -7,7 +7,6 @@ const EbookCard = ({ ebooks }) => {
         return (
           <Link key={ebook.id} to={`/libriotheque/ebooks/${ebook.id}`}>
             <div className="card">
-              {/* <h3>{ebook.title}</h3> */}
               {!ebook.authors.length ? <p></p> : <p>{ebook.authors[0].name}</p>}
               <img src={ebook.formats["image/jpeg"]} alt={ebook.title} />
             </div>

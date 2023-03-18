@@ -6,10 +6,10 @@
 }
 
 body {
-  margin: 5rem 0 0 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  margin: 5.3rem 0 0 0;
+  font-family: -apple-system, BlinkMacSystemFont, Arial, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Helvetica,
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -21,7 +21,7 @@ body {
 
 .dark {
   background: #282c34;
-  color: white;
+  color: #ffffff;
 }
 
 ul {
@@ -34,11 +34,31 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-family: "Library3am", Arial, Helvetica, sans-serif;
+  font-size: 2.4rem;
+  padding: 0 5px;
+}
+
+h2 {
+  font-size: 1.35rem;
+  padding: 0 5px;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+#intro {
+  font-size: 1.2rem;
+  padding: 0 5px;
+}
+
 .card {
   width: 230px;
-  padding: 1rem;
+  padding: 0.1rem 0.5rem 0.8rem 0.5rem;
   box-shadow: 0px 2px 3px grey;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   background: whitesmoke;
   border-radius: 5px;
 }
@@ -52,7 +72,6 @@ a {
   width: 340px;
   padding: 10px;
   box-shadow: 0px 2px 3px grey;
-  margin: 1rem 0;
   background: whitesmoke;
   border-radius: 5px;
 }
@@ -107,7 +126,7 @@ a {
 }
 
 #search-button:hover {
-  scale: 1.3;
+  scale: 1.2;
   text-shadow: 1.5px 1.5px plum;
 }
 
@@ -125,6 +144,7 @@ a {
 .credit-gutenberg {
   font-size: 0.8rem;
   top: 100%;
+  margin-top: 1.5rem;
 }
 
 .ebook-formats {
@@ -134,6 +154,7 @@ a {
 .formats-list {
   display: flex;
   justify-content: space-evenly;
+  margin-top: 1.3rem;
 }
 .button-format {
   font-weight: bold;
@@ -169,4 +190,5 @@ a {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+  gap: 1rem;
 }

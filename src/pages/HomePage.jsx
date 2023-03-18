@@ -24,6 +24,12 @@ function HomePage() {
 
   return (
     <div>
+      <h1>Bienvenue à la LIBRIOTHÈQUE</h1>
+      <p id="intro">
+        Bibliothèque numérique proposant plus de 3500 ebooks gratuits, en langue
+        française, à télécharger.
+      </p>
+
       {homepagefetching && <p>Chargement...</p>}
 
       <EbookCard ebooks={popularEbooks} />
