@@ -1,0 +1,172 @@
+@font-face {
+  font-family: Library3am;
+  src: url("/fonts/Library3am.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  margin: 5rem 0 0 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  text-align: center;
+  background: #ffffff;
+}
+
+.dark {
+  background: #282c34;
+  color: white;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card {
+  width: 230px;
+  padding: 1rem;
+  box-shadow: 0px 2px 3px grey;
+  margin: 1rem 0;
+  background: whitesmoke;
+  border-radius: 5px;
+}
+
+.card:hover {
+  scale: 1.1;
+  box-shadow: 0px 2px 3px plum;
+}
+
+.card-details {
+  width: 340px;
+  padding: 10px;
+  box-shadow: 0px 2px 3px grey;
+  margin: 1rem 0;
+  background: whitesmoke;
+  border-radius: 5px;
+}
+
+.ebook-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card > img {
+  box-shadow: 0px 2px 3px grey;
+}
+
+.card-details > img {
+  box-shadow: 0px 2px 3px grey;
+}
+
+.search-bar {
+  background-color: snow;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 5%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  align-items: center;
+  z-index: 1;
+}
+
+#search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  width: 180px;
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  z-index: 1;
+}
+
+#search-button {
+  font-size: 1.4rem;
+  border: 0;
+  background: snow;
+}
+
+#search-button:hover {
+  scale: 1.3;
+  text-shadow: 1.5px 1.5px plum;
+}
+
+#libriotheque {
+  font-family: "Library3am", Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  text-align: left;
+}
+
+#libriotheque:hover {
+  color: purple;
+  text-shadow: 2px 2px plum;
+}
+
+.credit-gutenberg {
+  font-size: 0.8rem;
+  top: 100%;
+}
+
+.ebook-formats {
+  margin-bottom: 1rem;
+}
+
+.formats-list {
+  display: flex;
+  justify-content: space-evenly;
+}
+.button-format {
+  font-weight: bold;
+  border: 1px solid black;
+  padding: 0.4rem 1rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.button-format:hover {
+  font-weight: bold;
+  color: white;
+  background-color: purple;
+  border: 1px solid purple;
+  padding: 0.4rem 1rem;
+  border-radius: 10px;
+}
+#back-button {
+  font-size: 1.8rem;
+  font-weight: bold;
+  border-radius: 50%;
+  border: 1px solid grey;
+  background: whitesmoke;
+  float: left;
+}
+
+#back-button:hover {
+  color: purple;
+  border: 1px solid purple;
+  border-radius: 50%;
+}
+.ebooks-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
