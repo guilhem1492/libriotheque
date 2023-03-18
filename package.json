@@ -2,7 +2,6 @@
   "name": "libriotheque-react",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://guilhem1492.github.io/libriotheque/",
   "type": "module",
   "scripts": {
     "dev": "vite",
