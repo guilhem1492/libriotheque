@@ -27,13 +27,13 @@ const SearchBar = ({ setEbooks }) => {
     e.preventDefault();
     if (input.length > 0) {
       getEbooks();
-      navigate("/ebooks");
+      navigate("/libriotheque/ebooks");
     }
   };
 
   return (
     <div className="search-bar">
-      <Link id="libriotheque" to="/">
+      <Link id="libriotheque" to="/libriotheque">
         Librio
         <br />
         thèque

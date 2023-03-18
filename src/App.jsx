@@ -16,9 +16,15 @@ function App() {
       <SearchBar setEbooks={setEbooks} />
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/ebooks" element={<EbooksSearchPage ebooks={ebooks} />} />
-        <Route path="/ebooks/:ebookId" element={<EbookDetailsPage />} />
+        <Route path="/libriotheque" element={<HomePage />} />
+        <Route
+          path="/libriotheque/ebooks"
+          element={<EbooksSearchPage ebooks={ebooks} />}
+        />
+        <Route
+          path="/libriotheque/ebooks/:ebookId"
+          element={<EbookDetailsPage />}
+        />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
 
