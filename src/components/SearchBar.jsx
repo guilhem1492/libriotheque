@@ -41,7 +41,7 @@ const SearchBar = ({ setEbooks }) => {
       <form id="search-form" onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Chercher un ebook"
+          placeholder="Titre ? Auteur(e) ?"
           onChange={handleChange}
           value={input}
         />
