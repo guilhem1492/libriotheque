@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const SearchBar = ({ setEbooks }) => {
+const SearchBar = ({ setEbooks, setNextEbooks }) => {
   const [input, setInput] = useState("");
 
   const navigate = useNavigate();
@@ -13,6 +13,13 @@ const SearchBar = ({ setEbooks }) => {
     try {
       const response = await axios.get(apiUrl);
       setEbooks(response.data.results);
+      if (response.data.next !== null) {
+        const apiNextPageUrl = response.data.next;
+        const responseNext = await axios.get(apiNextPageUrl);
+        setNextEbooks(responseNext.data.results);
+      } else {
+        setNextEbooks([]);
+      }
     } catch (error) {
       console.error(error);
     }
