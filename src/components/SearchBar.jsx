@@ -34,7 +34,7 @@ const SearchBar = ({ setQuery, setEbooks, setNextEbooks }) => {
     if (input.length > 0) {
       setQuery(input);
       getEbooks();
-      navigate(`/libriotheque/ebooks/page1`);
+      navigate(`/libriotheque/ebooks/`);
     }
   };
 

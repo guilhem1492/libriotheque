@@ -199,9 +199,18 @@ h3 {
   font-family: "Library3am", Arial, Helvetica, sans-serif;
   font-size: 1rem;
   margin-top: 1.5rem;
+  padding: 0.3rem 0.4rem;
+  background-color: whitesmoke;
+  border: 1px solid grey;
+  border-radius: 5px;
 }
 
 .next-previous-page:hover {
   color: purple;
   text-shadow: 2px 2px plum;
+  border: 1px solid purple;
+}
+
+#more-results {
+  margin-top: 1.5rem;
 }

@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import EbookCard from "../components/EbookCard";
 
 function EbooksSearchPage({ query, ebooks, nextEbooks }) {
   const [fetching, setFetching] = useState(true);
+  const [nextResults, setNextResults] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams({});
 
   useEffect(() => {
     setSearchParams({ search: query });
+    setNextResults(false);
   }, [query]);
 
   useEffect(() => {
@@ -17,6 +19,10 @@ function EbooksSearchPage({ query, ebooks, nextEbooks }) {
     }, 1500);
   }, [ebooks]);
 
+  const handleClick = () => {
+    setNextResults((current) => !current);
+  };
+
   return (
     <div>
       {!fetching && !ebooks.length && (
@@ -24,11 +30,17 @@ function EbooksSearchPage({ query, ebooks, nextEbooks }) {
       )}
 
       <EbookCard ebooks={ebooks} />
-      {nextEbooks.length ? (
-        <p className="next-previous-page">
-          <Link to={`/libriotheque/ebooks/page2`}>Page suivante</Link>
-        </p>
+
+      {nextEbooks.length && !nextResults ? (
+        <button className="next-previous-page" onClick={handleClick}>
+          Afficher plus de résultats
+        </button>
       ) : null}
+      {nextResults && (
+        <div id="more-results">
+          <EbookCard ebooks={nextEbooks} />
+        </div>
+      )}
     </div>
   );
 }

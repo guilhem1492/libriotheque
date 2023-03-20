@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import EbooksSearchPage from "./pages/EbooksSearchPage";
-import EbooksSearchPage2 from "./pages/EbooksSearchPage2";
+// import EbooksSearchPage2 from "./pages/EbooksSearchPage2";
 import ErrorPage from "./pages/ErrorPage";
 import EbookDetailsPage from "./pages/EbookDetailsPage";
 import HomePage from "./pages/HomePage";
@@ -24,7 +24,7 @@ function App() {
       <Routes>
         <Route path="/libriotheque" element={<HomePage />} />
         <Route
-          path={`/libriotheque/ebooks/page1`}
+          path={`/libriotheque/ebooks/`}
           element={
             <EbooksSearchPage
               query={query}
@@ -33,10 +33,10 @@ function App() {
             />
           }
         />
-        <Route
+        {/* <Route
           path={`/libriotheque/ebooks/page2`}
           element={<EbooksSearchPage2 query={query} nextEbooks={nextEbooks} />}
-        />
+        /> */}
         <Route
           path="/libriotheque/ebooks/:ebookId"
           element={<EbookDetailsPage />}
