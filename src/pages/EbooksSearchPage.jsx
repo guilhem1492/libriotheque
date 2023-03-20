@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import EbookCard from "../components/EbookCard";
 
-function EbooksSearchPage({ ebooks, nextEbooks }) {
+function EbooksSearchPage({ query, ebooks, nextEbooks }) {
   const [fetching, setFetching] = useState(true);
+  const [searchParams, setSearchParams] = useSearchParams({});
+
+  useEffect(() => {
+    setSearchParams({ search: query });
+  }, [query]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,7 +26,7 @@ function EbooksSearchPage({ ebooks, nextEbooks }) {
       <EbookCard ebooks={ebooks} />
       {nextEbooks.length ? (
         <p className="next-previous-page">
-          <Link to="/libriotheque/ebooks/page2">Page suivante</Link>
+          <Link to={`/libriotheque/ebooks/page2`}>Page suivante</Link>
         </p>
       ) : null}
     </div>

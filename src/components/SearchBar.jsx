@@ -2,9 +2,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const SearchBar = ({ setEbooks, setNextEbooks }) => {
+const SearchBar = ({ setQuery, setEbooks, setNextEbooks }) => {
   const [input, setInput] = useState("");
-
   const navigate = useNavigate();
 
   const apiUrl = `https://gutendex.com//books?languages=fr&copyright=false,null&search=${input}`;
@@ -33,8 +32,9 @@ const SearchBar = ({ setEbooks, setNextEbooks }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (input.length > 0) {
+      setQuery(input);
       getEbooks();
-      navigate("/libriotheque/ebooks");
+      navigate(`/libriotheque/ebooks/page1`);
     }
   };
 
