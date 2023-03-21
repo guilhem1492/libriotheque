@@ -77,6 +77,7 @@ h3 {
 }
 
 .card-details {
+  max-width: 800px;
   padding: 1rem;
   margin: 0 0.8rem;
   display: flex;
