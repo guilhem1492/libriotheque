@@ -22,62 +22,64 @@ function EbookDetailsPage() {
       {detailsFetching && <p>Chargement...</p>}
       {foundEbook.id && (
         <div key={foundEbook.id} className="card-details">
-          <BackButton />
-          <h2>{foundEbook.title}</h2>
+          <div>
+            <BackButton />
 
-          {!foundEbook.authors.length ? (
-            <p></p>
-          ) : (
-            <p>
-              {foundEbook.authors[0].name} ({foundEbook.authors[0].birth_year}-
-              {foundEbook.authors[0].death_year})
-            </p>
-          )}
+            <h2>{foundEbook.title}</h2>
 
-          {!foundEbook.translators.length ? (
-            <p></p>
-          ) : (
-            <p>
-              Traduction : {foundEbook.translators[0].name} (
-              {foundEbook.translators[0].birth_year}-
-              {foundEbook.translators[0].death_year})
-            </p>
-          )}
+            {!foundEbook.authors.length ? (
+              <p></p>
+            ) : (
+              <p>
+                {foundEbook.authors[0].name} ({foundEbook.authors[0].birth_year}
+                -{foundEbook.authors[0].death_year})
+              </p>
+            )}
 
+            {!foundEbook.translators.length ? (
+              <p></p>
+            ) : (
+              <p>
+                Traduction : {foundEbook.translators[0].name} (
+                {foundEbook.translators[0].birth_year}-
+                {foundEbook.translators[0].death_year})
+              </p>
+            )}
+
+            <h3 className="ebook-formats">Ebook (formats) :</h3>
+            <ul className="formats-list">
+              <li>
+                <a
+                  className="button-format"
+                  href={foundEbook.formats["text/html"]}
+                  target="_blank"
+                >
+                  HTML
+                </a>
+              </li>
+              <li>
+                <a
+                  className="button-format"
+                  href={foundEbook.formats["application/epub+zip"]}
+                  target="_blank"
+                  download
+                >
+                  EPUB
+                </a>
+              </li>
+              <li>
+                <a
+                  className="button-format"
+                  href={foundEbook.formats["application/x-mobipocket-ebook"]}
+                  target="_blank"
+                  download
+                >
+                  MOBI
+                </a>
+              </li>
+            </ul>
+          </div>
           <img src={foundEbook.formats["image/jpeg"]} alt={foundEbook.title} />
-
-          <h3 className="ebook-formats">Ebook (formats) :</h3>
-          <ul className="formats-list">
-            <li>
-              <a
-                className="button-format"
-                href={foundEbook.formats["text/html"]}
-                target="_blank"
-              >
-                HTML
-              </a>
-            </li>
-            <li>
-              <a
-                className="button-format"
-                href={foundEbook.formats["application/epub+zip"]}
-                target="_blank"
-                download
-              >
-                EPUB
-              </a>
-            </li>
-            <li>
-              <a
-                className="button-format"
-                href={foundEbook.formats["application/x-mobipocket-ebook"]}
-                target="_blank"
-                download
-              >
-                MOBI
-              </a>
-            </li>
-          </ul>
         </div>
       )}
     </div>
