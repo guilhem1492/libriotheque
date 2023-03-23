@@ -9,10 +9,20 @@ import Footer from "./components/Footer";
 
 function App() {
   const [query, setQuery] = useState();
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = (event) => {
+    setTheme(event.target.value);
+  };
 
   return (
-    <div className="App">
-      <SearchBar setQuery={setQuery} />
+    <div className={"App " + theme}>
+      <SearchBar setQuery={setQuery} theme={theme} />
+
+      <select onChange={toggleTheme}>
+        <option value="light">🔆</option>
+        <option value="dark">🌙</option>
+      </select>
 
       <Routes>
         <Route path="/libriotheque" element={<HomePage />} />

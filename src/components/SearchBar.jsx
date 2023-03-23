@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const SearchBar = ({ setQuery }) => {
+const SearchBar = ({ setQuery, theme }) => {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
 
@@ -19,7 +19,7 @@ const SearchBar = ({ setQuery }) => {
   };
 
   return (
-    <div className="search-bar">
+    <div className={"search-bar " + theme}>
       <Link id="libriotheque" to="/libriotheque">
         Librio
         <br />
