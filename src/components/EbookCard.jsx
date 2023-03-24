@@ -1,3 +1,4 @@
+import "./components.css";
 import { Link } from "react-router-dom";
 
 const EbookCard = ({ ebooks }) => {

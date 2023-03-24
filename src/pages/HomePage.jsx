@@ -1,3 +1,4 @@
+import "./pages.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import EbookCard from "../components/EbookCard";

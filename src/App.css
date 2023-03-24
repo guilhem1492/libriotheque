@@ -1,1 +1,25 @@
+.App {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 5rem 0 0.1rem 0;
+}
 
+/* ToggleTheme */
+
+select {
+  padding: 0.1rem;
+  margin-bottom: 1rem;
+  background: inherit;
+  border: 1px solid grey;
+  border-radius: 20px;
+}
+
+.light {
+  background-color: #ffffff;
+  color: black;
+}
+
+.dark {
+  background-color: #282c34;
+  color: #ffffff;
+}

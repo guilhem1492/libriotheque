@@ -10,10 +10,6 @@ https://guilhem1492.github.io/libriotheque
 
 React, JavaScript, HTML5 & CSS3, Axios.
 
-# Améliorations possibles
-
-Un mode d'affichage "sombre" reste à implémenter.
-
 # Source
 
 JSON web API for Project Gutenberg ebook metadata :

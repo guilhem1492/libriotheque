@@ -1,11 +1,13 @@
-const imgURL =
-  "https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m3/react-routing/404.gif";
+import { Link } from "react-router-dom";
 
 function ErrorPage() {
   return (
     <div>
-      <h1>404</h1>
-      <img src={imgURL} alt="404 error gif" className="page-img" />
+      <h1 style={{ fontSize: "5rem", color: "purple" }}>404</h1>
+      <h1>Navré, la page que vous avez demandée est introuvable !</h1>
+      <button className="more-results-button" style={{ margin: "1.5rem 10px" }}>
+        <Link to="/libriotheque">Retour à la Libriothèque</Link>
+      </button>
     </div>
   );
 }

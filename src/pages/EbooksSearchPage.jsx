@@ -1,3 +1,4 @@
+import "./pages.css";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import EbookCard from "../components/EbookCard";
@@ -55,7 +56,7 @@ function EbooksSearchPage({ query }) {
       <EbookCard ebooks={ebooks} />
 
       {nextEbooks.length && !nextResults ? (
-        <button className="next-previous-page" onClick={handleClick}>
+        <button className="more-results-button" onClick={handleClick}>
           Afficher plus de résultats
         </button>
       ) : null}
