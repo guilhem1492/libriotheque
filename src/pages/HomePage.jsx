@@ -27,8 +27,8 @@ function HomePage() {
     <div>
       <h1>Bienvenue à la LIBRIOTHÈQUE</h1>
       <p id="intro">
-        Bibliothèque numérique proposant plus de 3500 ebooks gratuits, en langue
-        française, à télécharger.
+        Bibliothèque numérique proposant plus de 3500 ebooks gratuits, en
+        français, à télécharger.
       </p>
 
       {homepagefetching && <p>Chargement...</p>}
