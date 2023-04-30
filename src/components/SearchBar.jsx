@@ -1,10 +1,12 @@
 import "./components.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ThemeContext } from "./../context/theme.context";
 import { Link, useNavigate } from "react-router-dom";
 
-const SearchBar = ({ setQuery, theme }) => {
+const SearchBar = ({ setQuery }) => {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
+  const { theme } = useContext(ThemeContext);
 
   const handleChange = (e) => {
     e.preventDefault();

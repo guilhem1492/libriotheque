@@ -1,6 +1,8 @@
 import "./App.css";
-import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { useState, useContext } from "react";
+import { ThemeContext } from "./context/theme.context";
+
 import EbooksSearchPage from "./pages/EbooksSearchPage";
 import ErrorPage from "./pages/ErrorPage";
 import EbookDetailsPage from "./pages/EbookDetailsPage";
@@ -10,20 +12,15 @@ import Footer from "./components/Footer";
 
 function App() {
   const [query, setQuery] = useState();
-  const [theme, setTheme] = useState("light");
-
-  const toggleTheme = (event) => {
-    setTheme(event.target.value);
-  };
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
     <div className={"App " + theme}>
-      <SearchBar setQuery={setQuery} theme={theme} />
+      <SearchBar setQuery={setQuery} />
 
-      <select onChange={toggleTheme}>
-        <option value="light">🔆</option>
-        <option value="dark">🌙</option>
-      </select>
+      <button className="theme-btn" onClick={toggleTheme}>
+        {theme === "light" ? "🌙" : "🔆"}
+      </button>
 
       <Routes>
         <Route path="/libriotheque" element={<HomePage />} />
