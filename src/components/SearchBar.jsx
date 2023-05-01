@@ -18,6 +18,7 @@ const SearchBar = ({ setQuery }) => {
     if (input.length > 0) {
       setQuery(input);
       navigate(`/libriotheque/ebooks/?search=${input}`);
+      setInput("");
     }
   };
 
