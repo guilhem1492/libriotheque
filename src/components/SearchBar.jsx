@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 const SearchBar = ({ setQuery }) => {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
-  const { theme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -28,6 +28,7 @@ const SearchBar = ({ setQuery }) => {
         <br />
         thèque
       </Link>
+
       <form id="search-form" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -39,6 +40,10 @@ const SearchBar = ({ setQuery }) => {
           🔎
         </button>
       </form>
+
+      <button className="theme-btn" onClick={toggleTheme}>
+        {theme === "light" ? "🌙" : "🔆"}
+      </button>
     </div>
   );
 };

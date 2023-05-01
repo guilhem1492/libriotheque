@@ -1,18 +1,10 @@
 .App {
   box-sizing: border-box;
   min-height: 100vh;
-  padding: 5rem 0 0.1rem 0;
+  padding: 5.8rem 0 0.1rem 0;
 }
 
 /* ToggleTheme */
-
-.theme-btn {
-  padding: 0.35rem;
-  margin-bottom: 1rem;
-  background: inherit;
-  border: 1px solid grey;
-  border-radius: 50%;
-}
 
 .light {
   background-color: #ffffff;

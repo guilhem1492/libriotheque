@@ -12,15 +12,11 @@ import Footer from "./components/Footer";
 
 function App() {
   const [query, setQuery] = useState();
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div className={"App " + theme}>
       <SearchBar setQuery={setQuery} />
-
-      <button className="theme-btn" onClick={toggleTheme}>
-        {theme === "light" ? "🌙" : "🔆"}
-      </button>
 
       <Routes>
         <Route path="/libriotheque" element={<HomePage />} />
