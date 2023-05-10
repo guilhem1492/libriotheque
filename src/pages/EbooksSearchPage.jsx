@@ -22,7 +22,7 @@ function EbooksSearchPage({ query }) {
     window.scrollTo(0, 0);
     setTimeout(() => {
       setFetching(false);
-    }, 3000);
+    }, 5000);
   }, [ebooks]);
 
   const getEbooks = async () => {
