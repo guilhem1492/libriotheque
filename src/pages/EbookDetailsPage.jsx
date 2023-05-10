@@ -20,7 +20,7 @@ function EbookDetailsPage() {
 
   return (
     <div className="ebook-details">
-      {detailsFetching && <p>Chargement...</p>}
+      {detailsFetching && <p className="loading">Chargement...</p>}
       {foundEbook.id && (
         <div key={foundEbook.id} className="card-details">
           <div>

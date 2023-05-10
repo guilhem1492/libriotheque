@@ -44,3 +44,9 @@ h2 {
 h3 {
   font-size: 1.1rem;
 }
+
+.loading {
+  font-family: "Library3am", Arial, Helvetica, sans-serif;
+  color: magenta;
+  margin-top: 1.75rem;
+}

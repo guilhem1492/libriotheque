@@ -31,7 +31,7 @@ function HomePage() {
         français, à télécharger.
       </p>
 
-      {homepagefetching && <p>Chargement...</p>}
+      {homepagefetching && <p className="loading">Chargement...</p>}
 
       <EbookCard ebooks={popularEbooks} />
     </div>
