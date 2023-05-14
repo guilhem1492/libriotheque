@@ -62,7 +62,6 @@ function EbookDetailsPage() {
                 <a
                   className="button-format"
                   href={foundEbook.formats["application/epub+zip"]}
-                  target="_blank"
                   download
                 >
                   EPUB
@@ -72,7 +71,6 @@ function EbookDetailsPage() {
                 <a
                   className="button-format"
                   href={foundEbook.formats["application/x-mobipocket-ebook"]}
-                  target="_blank"
                   download
                 >
                   MOBI

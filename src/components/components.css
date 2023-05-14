@@ -22,13 +22,19 @@
 }
 
 .search-bar input {
-  width: 145px;
+  width: 150px;
   padding: 7px 5px;
   background: inherit;
   color: inherit;
   border-radius: 5px;
   border: 1px solid grey;
   z-index: 1;
+}
+
+@media (min-width: 480px) {
+  .search-bar input {
+    width: 250px;
+  }
 }
 
 #search-button {
