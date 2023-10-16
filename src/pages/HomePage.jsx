@@ -12,7 +12,10 @@ function HomePage() {
   const getMostPopularEbooks = async () => {
     try {
       const response = await axios.get(apiUrl);
-      setPopularEbooks(response.data.results.slice(0, 8));
+
+      //response.data.results.forEach((ebook) => console.log(ebook.id));
+
+      setPopularEbooks(response.data.results.slice(6, 14));
       setHomepageFetching(false);
     } catch (error) {
       console.error(error);
