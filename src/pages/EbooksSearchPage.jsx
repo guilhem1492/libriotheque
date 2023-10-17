@@ -28,13 +28,30 @@ function EbooksSearchPage({ query }) {
       setEbooks([]);
       setNextEbooks([]);
       const response = await axios.get(apiUrl);
-      //console.log(response.data.results);
-      setEbooks(response.data.results);
+      const results = response.data.results
+
+      results.forEach((ebook) => {
+        if (!ebook.formats["image/jpeg"] || !ebook.formats["application/epub+zip"]) {
+          results.splice(results.indexOf(ebook), 1)
+        }
+      });
+
+      //console.log(results);
+      
+      setEbooks(results);
       setFetching(false);
       if (response.data.next !== null) {
         const apiNextPageUrl = response.data.next;
         const responseNext = await axios.get(apiNextPageUrl);
-        setNextEbooks(responseNext.data.results);
+        const responseNextResults = responseNext.data.results
+
+        responseNextResults.forEach((ebook) => {
+          if (!ebook.formats["image/jpeg"] || !ebook.formats["application/epub+zip"]) {
+            responseNextResults.splice(responseNextResults.indexOf(ebook), 1)
+          }
+        });
+
+        setNextEbooks(responseNextResults);
         setNextResults(true);
       }
     } catch (error) {
