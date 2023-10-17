@@ -20,9 +20,6 @@ function EbooksSearchPage({ query }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    // setTimeout(() => {
-    //   setFetching(false);
-    // }, 5000);
   }, [ebooks]);
 
   const getEbooks = async () => {
@@ -31,6 +28,7 @@ function EbooksSearchPage({ query }) {
       setEbooks([]);
       setNextEbooks([]);
       const response = await axios.get(apiUrl);
+      //console.log(response.data.results);
       setEbooks(response.data.results);
       setFetching(false);
       if (response.data.next !== null) {

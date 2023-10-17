@@ -13,19 +13,25 @@ function HomePage() {
     try {
       let response = await axios.get(apiUrl);
       response = response.data.results
+      //console.log(response);
       
       response.forEach((ebook) => {
         if (!ebook.formats["image/jpeg"] || !ebook.formats["application/epub+zip"]) {
-          response.splice(response.indexOf(ebook),1)
+          response.splice(response.indexOf(ebook), 1)
         }
       });
 
-      setPopularEbooks(response.slice(0,8));
+      const randomNum = Math.floor(Math.random() * 20)
+      //console.log(randomNum)
+
+      setPopularEbooks(response.slice(randomNum, randomNum + 10));
+      
       setHomepageFetching(false);
     } catch (error) {
       console.error(error);
     }
   };
+
 
   useEffect(() => {
     getMostPopularEbooks();
@@ -35,7 +41,7 @@ function HomePage() {
     <div>
       <h1>Bienvenue à la LIBRIOTHÈQUE</h1>
       <p id="intro">
-        Bibliothèque numérique proposant plus de 3500 ebooks gratuits, en
+        Bibliothèque numérique proposant plus de 3600 ebooks gratuits, en
         français, à télécharger.
       </p>
 
