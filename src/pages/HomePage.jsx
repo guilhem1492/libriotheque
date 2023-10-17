@@ -11,11 +11,16 @@ function HomePage() {
 
   const getMostPopularEbooks = async () => {
     try {
-      const response = await axios.get(apiUrl);
+      let response = await axios.get(apiUrl);
+      response = response.data.results
+      
+      response.forEach((ebook) => {
+        if (!ebook.formats["image/jpeg"] || !ebook.formats["application/epub+zip"]) {
+          response.splice(response.indexOf(ebook),1)
+        }
+      });
 
-      //response.data.results.forEach((ebook) => console.log(ebook.id));
-
-      setPopularEbooks(response.data.results.slice(6, 14));
+      setPopularEbooks(response.slice(0,8));
       setHomepageFetching(false);
     } catch (error) {
       console.error(error);
