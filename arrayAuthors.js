@@ -1,17 +1,12 @@
 import axios from "axios";
+import fs from 'fs';
 
-      let apiUrl = "https://gutendex.com//books?languages=fr&copyright=false,null";
+      const apiUrl = "https://gutendex.com//books?languages=fr&copyright=false,null";
       
       const response = await axios.get(apiUrl);
       const arrayEbooks = response.data.results
-      
-      // response.forEach((ebook) => {
-      //   if (!ebook.formats["image/jpeg"] || !ebook.formats["application/epub+zip"]) {
-      //     response.splice(response.indexOf(ebook), 1)
-      //   }
-      // });
 
-        const numberOfPages = Math.ceil(response.data.count / 32)
+      const numberOfPages = Math.ceil(response.data.count / 32)
 
         for (let i=2; i<=numberOfPages; i++) {
 
@@ -27,9 +22,19 @@ import axios from "axios";
 
       let arrayAuthors = arrayEbooks.map(ebook => ebook.authors);
       arrayAuthors = arrayAuthors.flat().map(author => author.name);
-      arrayAuthors = [...new Set(arrayAuthors)]
+      arrayAuthors = [...new Set(arrayAuthors)].sort()
 
-      console.log(arrayAuthors.sort().length);
+      //console.log(arrayAuthors);
+
+      const jsonContent = JSON.stringify(arrayAuthors);
+
+      fs.writeFile("./authors.json", jsonContent, 'utf8', function (err) {
+        if (err) {
+            return console.log(err);
+        }
+    
+        console.log("The file was saved!");
+    }); 
 
 
     

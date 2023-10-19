@@ -9,6 +9,7 @@ import EbookDetailsPage from "./pages/EbookDetailsPage";
 import HomePage from "./pages/HomePage";
 import SearchBar from "./components/SearchBar";
 import Footer from "./components/Footer";
+import IndexAuthorsPage from "./pages/IndexAuthorsPage";
 
 function App() {
   const [query, setQuery] = useState();
@@ -21,13 +22,14 @@ function App() {
       <Routes>
         <Route path="/libriotheque" element={<HomePage />} />
         <Route
-          path={`/libriotheque/ebooks/`}
+          path={"/libriotheque/ebooks/"}
           element={<EbooksSearchPage query={query} />}
         />
         <Route
           path="/libriotheque/ebooks/:ebookId"
           element={<EbookDetailsPage />}
         />
+        <Route path="/libriotheque/index/" element={<IndexAuthorsPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
 
