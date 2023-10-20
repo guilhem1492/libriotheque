@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { Link} from "react-router-dom";
+
 import authors from "../../authors.json";
 
 const IndexAuthorsPage = () => {
@@ -7,7 +9,6 @@ const IndexAuthorsPage = () => {
     useEffect(() => {
         setAllAuthors(authors)
       }, []);
-  
 
   return (
 <div>
@@ -15,7 +16,9 @@ const IndexAuthorsPage = () => {
 
     {allAuthors.map((author) => {
         return (
+          <Link to={`/libriotheque/ebooks/?search=${author.name}`}>
           <p key={author.name}>{author.name} ({!author.birth_year ? "?" : author.birth_year} – {!author.death_year ? "?" : author.death_year})</p>
+          </Link>
         );
       })}
 </div>

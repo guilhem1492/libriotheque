@@ -23,7 +23,7 @@ function App() {
         <Route path="/libriotheque" element={<HomePage />} />
         <Route
           path={"/libriotheque/ebooks/"}
-          element={<EbooksSearchPage query={query} />}
+          element={<EbooksSearchPage query={query} setQuery={setQuery} />}
         />
         <Route
           path="/libriotheque/ebooks/:ebookId"

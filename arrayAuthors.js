@@ -1,5 +1,4 @@
 import axios from "axios";
-import { log } from "console";
 import fs from 'fs';
 
       const apiUrl = "https://gutendex.com//books?languages=fr&copyright=false,null";

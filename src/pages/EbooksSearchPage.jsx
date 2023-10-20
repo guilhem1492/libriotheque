@@ -2,9 +2,10 @@ import "./pages.css";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import EbookCard from "../components/EbookCard";
+import BackButton from "../components/BackButton";
 import axios from "axios";
 
-function EbooksSearchPage({ query }) {
+function EbooksSearchPage({ query, setQuery }) {
   const [ebooks, setEbooks] = useState([]);
   const [nextEbooks, setNextEbooks] = useState([]);
   const [fetching, setFetching] = useState(true);
@@ -12,6 +13,7 @@ function EbooksSearchPage({ query }) {
   const [ebooksQuery] = useSearchParams();
 
   const apiQuery = ebooksQuery.get("search");
+  setQuery(apiQuery)
   const apiUrl = `https://gutendex.com//books?languages=fr&copyright=false,null&search=${apiQuery}`;
 
   useEffect(() => {
@@ -70,6 +72,8 @@ function EbooksSearchPage({ query }) {
         <p id="no-results">Aucun ebook ne correspond à votre recherche.</p>
       )}
 
+      <BackButton />
+      
       <EbookCard ebooks={ebooks} />
 
       {nextEbooks.length && nextResults ? (
