@@ -1,4 +1,5 @@
 import axios from "axios";
+import { log } from "console";
 import fs from 'fs';
 
       const apiUrl = "https://gutendex.com//books?languages=fr&copyright=false,null";
@@ -9,7 +10,6 @@ import fs from 'fs';
       const numberOfPages = Math.ceil(response.data.count / 32)
 
         for (let i=2; i<=numberOfPages; i++) {
-
           const apiNextPageUrl = "https://gutendex.com/books/?copyright=false%2Cnull&languages=fr&page=" + i
           const responseNext = await axios.get(apiNextPageUrl);
           const responseNextResults = responseNext.data.results
@@ -17,15 +17,13 @@ import fs from 'fs';
           for (const ebook of responseNextResults) {
             arrayEbooks.push(ebook)
           }
-
         }
 
-      let arrayAuthors = arrayEbooks.map(ebook => ebook.authors);
-      arrayAuthors = arrayAuthors.flat().map(author => author.name);
-      arrayAuthors = [...new Set(arrayAuthors)].sort()
+      let arrayAuthors = arrayEbooks.map(ebook => ebook.authors).flat();
+      arrayAuthors = [...new Map(arrayAuthors.map(a => [a.name, a])).values()].sort((a, b) => a.name.localeCompare(b.name))
 
-      //console.log(arrayAuthors);
-
+      console.log(arrayAuthors.length);
+      
       const jsonContent = JSON.stringify(arrayAuthors);
 
       fs.writeFile("./authors.json", jsonContent, 'utf8', function (err) {

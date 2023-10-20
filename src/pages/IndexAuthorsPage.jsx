@@ -1,22 +1,11 @@
 import { useState, useEffect } from "react";
-import authors from "../pages/authors.json";
+import authors from "../../authors.json";
 
 const IndexAuthorsPage = () => {
     const [allAuthors, setAllAuthors] = useState([]);
 
-    const getAllAuthors = async () => {
-
-        try {
-            setAllAuthors(authors)
-            
-        } catch (error) {
-            console.error(error);
-        }
-
-    }
-
     useEffect(() => {
-        getAllAuthors();
+        setAllAuthors(authors)
       }, []);
   
 
@@ -26,7 +15,7 @@ const IndexAuthorsPage = () => {
 
     {allAuthors.map((author) => {
         return (
-          <p key={author}>{author}</p>
+          <p key={author.name}>{author.name} ({!author.birth_year ? "?" : author.birth_year} – {!author.death_year ? "?" : author.death_year})</p>
         );
       })}
 </div>

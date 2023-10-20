@@ -32,8 +32,7 @@ function EbookDetailsPage() {
               <p></p>
             ) : (
               <p>
-                {foundEbook.authors[0].name} ({foundEbook.authors[0].birth_year}
-                -{foundEbook.authors[0].death_year})
+                {foundEbook.authors[0].name} ({!foundEbook.authors[0].birth_year ? "?" : foundEbook.authors[0].birth_year} – {!foundEbook.authors[0].death_year ? "?" : foundEbook.authors[0].death_year})
               </p>
             )}
 
@@ -42,8 +41,7 @@ function EbookDetailsPage() {
             ) : (
               <p>
                 Traduction : {foundEbook.translators[0].name} (
-                {foundEbook.translators[0].birth_year}-
-                {foundEbook.translators[0].death_year})
+                 {!foundEbook.translators[0].birth_year ? "?" : foundEbook.translators[0].birth_year} – {!foundEbook.translators[0].death_year ? "?" : foundEbook.translators[0].death_year})
               </p>
             )}
 
