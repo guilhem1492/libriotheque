@@ -13,8 +13,9 @@ function EbooksSearchPage({ query, setQuery }) {
   const [ebooksQuery] = useSearchParams();
 
   const apiQuery = ebooksQuery.get("search");
-  setQuery(apiQuery)
   const apiUrl = `https://gutendex.com//books?languages=fr&copyright=false,null&search=${apiQuery}`;
+
+  setQuery(apiQuery) // console red WARNING!!!
 
   useEffect(() => {
     getEbooks();
@@ -69,7 +70,7 @@ function EbooksSearchPage({ query, setQuery }) {
     <div>
       {fetching && <p className="loading">Chargement...</p>}
       {!fetching && !ebooks.length && (
-        <p id="no-results">Aucun ebook ne correspond à votre recherche.</p>
+        <p className="no-results">Aucun ebook ne correspond à votre recherche.</p>
       )}
 
       <BackButton />
