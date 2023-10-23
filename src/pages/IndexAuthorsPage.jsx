@@ -17,7 +17,7 @@ const IndexAuthorsPage = () => {
     {allAuthors.map((author) => {
         return (
           <Link to={`/libriotheque/ebooks/?search=${author.name}`}>
-          <p key={author.name}>{author.name} ({!author.birth_year ? "?" : author.birth_year} – {!author.death_year ? "?" : author.death_year})</p>
+          <p id="author-line" key={author.name}>{author.name} ({!author.birth_year ? "?" : author.birth_year} – {!author.death_year ? "?" : author.death_year})</p>
           </Link>
         );
       })}

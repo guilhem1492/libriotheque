@@ -25,11 +25,13 @@ const SearchBar = ({ setQuery }) => {
   return (
     <div className={"search-bar " + theme}>
       <Link id="libriotheque" to="/libriotheque">
-        Librio
-        <br />
-        thèque
+        Libriothèque
       </Link>
 
+      <div id="search-container">
+      <Link id="index" to="/libriotheque/index">
+        Index
+      </Link>
       <form id="search-form" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -45,6 +47,7 @@ const SearchBar = ({ setQuery }) => {
       <button className="theme-btn" onClick={toggleTheme}>
         {theme === "light" ? "🌙" : "🔆"}
       </button>
+      </div>
     </div>
   );
 };

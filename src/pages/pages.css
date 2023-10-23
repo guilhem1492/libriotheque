@@ -84,3 +84,9 @@
   padding: 0.4rem 1rem;
   border-radius: 10px;
 }
+
+/* IndexAuthorsPage */
+
+#author-line:hover {
+  color: magenta;
+}
