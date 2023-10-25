@@ -6,6 +6,7 @@ import authors from "../../authors.json";
 const IndexAuthorsPage = () => {
     const [filteredAuthors, setFilteredAuthors] = useState([]);
     const [authorSearched, setAuthorSearched] = useState("");
+    const [fetching, setFetching] = useState(true);
 
     const handleChange = (e) => {
       e.preventDefault();
@@ -17,12 +18,13 @@ const IndexAuthorsPage = () => {
         setFilteredAuthors(authors)
       } else {
         setFilteredAuthors(authors.filter(a => a.name.toLowerCase().includes(authorSearched.toLowerCase().trim())))
+        setFetching(false)
       }
       }, [authorSearched]);
 
   return (
 <div>
-    <h1>Index des auteurs</h1>
+    <h2 id="index-title">Index des auteurs</h2>
 
         <input id="search-author-input"
           type="text"
@@ -31,7 +33,7 @@ const IndexAuthorsPage = () => {
           value={authorSearched}
         />
 
-      {!filteredAuthors.length && (
+      {!fetching && !filteredAuthors.length && (
         <p className="no-results">Aucun nom d'auteur(e) ne correspond à votre recherche.</p>
       )}
 

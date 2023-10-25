@@ -87,6 +87,15 @@
 
 /* IndexAuthorsPage */
 
+#index-title {
+  font-family: "Library3am", Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+}
+
+#author-line {
+  margin: 0.7rem 0.3rem;
+}
+
 #author-line:hover {
   color: magenta;
 }
@@ -98,7 +107,7 @@
   color: inherit;
   border-radius: 5px;
   border: 1px solid grey;
-  margin-top: 0.7rem;
+  margin-bottom: 0.5rem;
 }
 
 @media (min-width: 480px) {

@@ -68,12 +68,15 @@ function EbooksSearchPage({ query, setQuery }) {
 
   return (
     <div>
+
+  <BackButton />
+  
       {fetching && <p className="loading">Chargement...</p>}
       {!fetching && !ebooks.length && (
         <p className="no-results">Aucun ebook ne correspond à votre recherche.</p>
       )}
 
-      <BackButton />
+      
       
       <EbookCard ebooks={ebooks} />
 
