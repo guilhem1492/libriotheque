@@ -99,19 +99,3 @@
 #author-line:hover {
   color: magenta;
 }
-
-#search-author-input {
-  width: 150px;
-  padding: 7px 5px;
-  background: inherit;
-  color: inherit;
-  border-radius: 5px;
-  border: 1px solid grey;
-  margin-bottom: 0.5rem;
-}
-
-@media (min-width: 480px) {
-  #search-author-input {
-    width: 250px;
-  }
-}
