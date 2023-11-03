@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import { ThemeContext } from "./../context/theme.context";
 import { Link, useNavigate } from "react-router-dom";
 
-const SearchBar = ({ setQuery }) => {
+const SearchBar = ({ setQuery, searchBarDisplay }) => {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -22,6 +22,10 @@ const SearchBar = ({ setQuery }) => {
     }
   };
 
+  if (searchBarDisplay === 'notDisplay') {
+    return null;
+} else {
+  
   return (
     <div className={"search-bar " + theme}>
       <Link id="libriotheque" to="/libriotheque">
@@ -50,6 +54,7 @@ const SearchBar = ({ setQuery }) => {
       </div>
     </div>
   );
+}
 };
 
 export default SearchBar;

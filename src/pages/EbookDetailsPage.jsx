@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import BackButton from "../components/BackButton";
 
-function EbookDetailsPage() {
+function EbookDetailsPage({setSearchBarDisplay}) {
   const [detailsFetching, setDetailsFetching] = useState(true);
   const [foundEbook, setFoundEbook] = useState([]);
   const { ebookId } = useParams();
@@ -12,6 +12,7 @@ function EbookDetailsPage() {
   const apiUrl = `https://gutendex.com//books?ids=${ebookId}`;
 
   useEffect(() => {
+    setSearchBarDisplay("display")
     axios.get(apiUrl).then((response) => {
       setFoundEbook(response.data.results[0]);
       setDetailsFetching(false);

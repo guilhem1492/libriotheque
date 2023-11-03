@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
-function ErrorPage() {
+function ErrorPage({setSearchBarDisplay}) {
+
+  useEffect(() => {
+    setSearchBarDisplay("display")
+    }, []);
+  
+
+
   return (
     <div>
       <h1 style={{ fontSize: "5rem", color: "purple" }}>404</h1>

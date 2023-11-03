@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import EbookCard from "../components/EbookCard";
 
-function HomePage() {
+function HomePage({setSearchBarDisplay}) {
   const [homepagefetching, setHomepageFetching] = useState(true);
   const [popularEbooks, setPopularEbooks] = useState([]);
 
@@ -32,8 +32,8 @@ function HomePage() {
     }
   };
 
-
   useEffect(() => {
+    setSearchBarDisplay("display")
     getMostPopularEbooks();
   }, []);
 

@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link} from "react-router-dom";
-
+import BackButton from "../components/BackButton";
 import authors from "../../authors.json";
 
-const IndexAuthorsPage = () => {
+const IndexAuthorsPage = ({setSearchBarDisplay}) => {
     const [filteredAuthors, setFilteredAuthors] = useState([]);
     const [authorSearched, setAuthorSearched] = useState("");
     const [fetching, setFetching] = useState(true);
+
+    
 
     const handleChange = (e) => {
       e.preventDefault();
@@ -14,6 +16,7 @@ const IndexAuthorsPage = () => {
     };
 
     useEffect(() => {
+      setSearchBarDisplay("notDisplay")
       if (!authorSearched.length) {
         setFilteredAuthors(authors)
       } else {
@@ -24,6 +27,7 @@ const IndexAuthorsPage = () => {
 
   return (
 <div>
+  <BackButton />
     <h2 id="index-title">Index des auteurs</h2>
 
         <input id="search-author-input"

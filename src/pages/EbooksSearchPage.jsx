@@ -5,7 +5,7 @@ import EbookCard from "../components/EbookCard";
 import BackButton from "../components/BackButton";
 import axios from "axios";
 
-function EbooksSearchPage({ query, setQuery }) {
+function EbooksSearchPage({ query, setQuery, setSearchBarDisplay }) {
   const [ebooks, setEbooks] = useState([]);
   const [nextEbooks, setNextEbooks] = useState([]);
   const [fetching, setFetching] = useState(true);
@@ -18,6 +18,7 @@ function EbooksSearchPage({ query, setQuery }) {
   setQuery(apiQuery) // console red WARNING!!!
 
   useEffect(() => {
+    setSearchBarDisplay("display")
     getEbooks();
   }, [query]);
 
