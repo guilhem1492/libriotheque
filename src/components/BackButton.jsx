@@ -7,7 +7,10 @@ const BackButton = () => {
 
   //console.log(location.pathname);
 
-  if (location.pathname === "/libriotheque") {
+  if (
+    location.pathname === "/libriotheque" ||
+    location.pathname === "/libriotheque/"
+  ) {
     return null;
   } else {
     return (
