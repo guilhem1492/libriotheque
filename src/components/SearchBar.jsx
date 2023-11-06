@@ -2,6 +2,7 @@ import "./components.css";
 import { useState, useContext } from "react";
 import { ThemeContext } from "./../context/theme.context";
 import { Link, useNavigate } from "react-router-dom";
+import BackButton from "../components/BackButton";
 
 const SearchBar = ({ setQuery, searchBarDisplay }) => {
   const [input, setInput] = useState("");
@@ -28,6 +29,8 @@ const SearchBar = ({ setQuery, searchBarDisplay }) => {
   
   return (
     <div className={"search-bar " + theme}>
+       <BackButton />
+
       <Link id="libriotheque" to="/libriotheque">
         Libriothèque
       </Link>

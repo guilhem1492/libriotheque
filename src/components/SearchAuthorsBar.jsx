@@ -2,6 +2,7 @@ import "./components.css";
 import { useState, useContext, useEffect } from "react";
 import { ThemeContext } from "../context/theme.context";
 import { Link } from "react-router-dom";
+import BackButton from "../components/BackButton";
 import authors from "../../authors.json";
 
 const SearchAuthorsBar = ({ setFilteredAuthors, setFetching }) => {
@@ -27,6 +28,8 @@ const SearchAuthorsBar = ({ setFilteredAuthors, setFetching }) => {
   
   return (
     <div className={"search-bar " + theme}>
+     <BackButton />
+
       <Link id="libriotheque" to="/libriotheque">
         Libriothèque
       </Link>

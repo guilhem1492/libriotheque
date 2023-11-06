@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link} from "react-router-dom";
-import BackButton from "../components/BackButton";
 import SearchAuthorsBar from "../components/SearchAuthorsBar";
 
 const IndexAuthorsPage = ({setSearchBarDisplay}) => {
@@ -15,8 +14,6 @@ const IndexAuthorsPage = ({setSearchBarDisplay}) => {
 <div>
 
   <SearchAuthorsBar setFilteredAuthors={setFilteredAuthors} setFetching={setFetching} />
-  
-  <BackButton />
   
     <h2 id="index-title">Index des auteurs</h2>
 

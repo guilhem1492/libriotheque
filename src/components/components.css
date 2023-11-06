@@ -114,7 +114,7 @@
 
 #back-button {
   font-size: 1.3rem;
-  color: purple;
+  color: magenta;
   font-weight: bold;
   border: 0;
   background: inherit;
@@ -122,7 +122,7 @@
 }
 
 #back-button:hover {
-  color: purple;
+  color: magenta;
   text-shadow: 2px 2px plum;
 }
 

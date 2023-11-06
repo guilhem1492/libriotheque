@@ -2,7 +2,6 @@ import "./pages.css";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import EbookCard from "../components/EbookCard";
-import BackButton from "../components/BackButton";
 import axios from "axios";
 
 function EbooksSearchPage({ query, setQuery, setSearchBarDisplay }) {
@@ -71,8 +70,6 @@ function EbooksSearchPage({ query, setQuery, setSearchBarDisplay }) {
 
   return (
     <div>
-
-  <BackButton />
   
       {fetching && <p className="loading">Chargement...</p>}
       {!fetching && !ebooks.length && (

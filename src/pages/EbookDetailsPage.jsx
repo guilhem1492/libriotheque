@@ -2,7 +2,6 @@ import "./pages.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import BackButton from "../components/BackButton";
 
 function EbookDetailsPage({setSearchBarDisplay}) {
   const [detailsFetching, setDetailsFetching] = useState(true);
@@ -25,7 +24,6 @@ function EbookDetailsPage({setSearchBarDisplay}) {
       {foundEbook.id && (
         <div key={foundEbook.id} className="card-details">
           <div>
-            <BackButton />
 
             <h2>{foundEbook.title}</h2>
 
