@@ -32,7 +32,7 @@ const SearchAuthorsBar = ({ setFilteredAuthors, setFetching }) => {
       </Link>
 
       <div id="search-container">
-      <Link id="index" to="/libriotheque">
+      <Link id="accueil" to="/libriotheque">
         Accueil
       </Link>
       

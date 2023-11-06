@@ -21,10 +21,10 @@ function HomePage({setSearchBarDisplay}) {
         }
       });
 
-      const randomNum = Math.floor(Math.random() * 20)
+      const randomNum = Math.floor(Math.random() * 22)
       //console.log(randomNum)
 
-      setPopularEbooks(response.slice(randomNum, randomNum + 10));
+      setPopularEbooks(response.slice(randomNum, randomNum + 8));
       
       setHomepageFetching(false);
     } catch (error) {

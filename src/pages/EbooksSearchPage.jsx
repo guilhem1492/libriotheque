@@ -15,16 +15,18 @@ function EbooksSearchPage({ query, setQuery, setSearchBarDisplay }) {
   const apiQuery = ebooksQuery.get("search");
   const apiUrl = `https://gutendex.com//books?languages=fr&copyright=false,null&search=${apiQuery}`;
 
-  setQuery(apiQuery) // console red WARNING!!!
+   useEffect(() => {
+    setQuery(apiQuery);
+  }, [apiQuery]);
 
   useEffect(() => {
     setSearchBarDisplay("display")
     getEbooks();
   }, [query]);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [ebooks]);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, [ebooks]);
 
   const getEbooks = async () => {
     try {
