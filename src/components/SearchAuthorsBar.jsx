@@ -30,9 +30,9 @@ const SearchAuthorsBar = ({ setFilteredAuthors, setFetching }) => {
     <div className={"search-bar " + theme}>
      <BackButton />
 
-      <Link id="libriotheque" to="/libriotheque">
+      <h2 className="libriotheque" to="/libriotheque">
         Libriothèque
-      </Link>
+      </h2>
 
       <div id="search-container">
       <Link id="accueil" to="/libriotheque">

@@ -88,6 +88,7 @@
 /* IndexAuthorsPage */
 
 #index-title {
+  margin: 0;
   font-family: "Library3am", Arial, Helvetica, sans-serif;
   font-size: 1.3rem;
 }
